@@ -1,0 +1,6 @@
+*.bkp
+*.swp
+*~
+/node_modules
+.DS_Store
+/public/css/app.css
