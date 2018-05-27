@@ -1,13 +1,86 @@
 @import 'nib'
 
+default-color = #3c3b3b
+
 body
-	a
-		text-decoration none
+	min-height 10rem
+	padding-top 6rem
+	font-family 'Maven Pro', sans-serif
+	color default-color
 
-.top-bar
-	position fixed
+a
+	color default-color
+	text-decoration underline
 
-#home-pic
-	background url('/img/fairy_lights.jpeg') center 0 no-repeat fixed
-	background-size 1200px
-	height 550px
+h1
+	color default-color
+h2
+	color default-color
+p
+	color default-color
+
+.navbar
+	background-color: #ffffff
+	padding 1rem 2rem
+
+.rings
+	height 60px
+
+#butterfly
+	position absolute
+	top 50%
+	left -15rem
+	img
+		width 5rem
+
+#personalised
+	.container
+		height 100%
+		padding-top 5rem
+	#guest-name
+		font-family 'Cedarville Cursive', cursive
+		font-size 5rem
+	#guest-intro
+		font-size 1.5rem
+	#angle-down
+		font-size 5rem
+		padding-top 2rem
+		color #585858
+
+#marriage
+	background-image url('/img/shutters.jpg')
+	background-repeat no-repeat
+	background-size cover
+	min-height 600px
+	.white-on
+		color white
+		text-shadow 2px 2px 10px #444
+	#getting-married
+		padding-top 13rem
+		font-size 3rem
+	#save-the-date
+		font-family 'Cedarville Cursive', cursive
+		font-size 8rem
+
+#short-info
+	background-color #FDD782
+	p
+		font-size 1.5rem
+	.date-large
+		p
+			font-size 3rem
+	.date-center
+		border-left 1px solid #999
+		border-right 1px solid #999
+		p
+			font-size 2.5rem
+			line-height 1
+			margin-bottom 0
+	#bergerac-map
+		img
+			width 20%
+	#envelope
+		font-size 2rem
+
+.btn-rsvp
+	padding 0.4rem 2rem
