@@ -20,7 +20,7 @@
     var prevProgress = 0.0
     var duration = 2000
     var waitTime = 1000
-    var verticalDist = $('#personalised').height() / 2
+    var verticalDist = $('#personalised').height() / 2 - $('#angle-down').height()
     var butterfly = $('#butterfly')
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame
     function step(timestamp) {
@@ -42,7 +42,7 @@
             butterfly.css({
                 left: xStart + progress * (xTarget - xStart),
                 top: yStart + Math.cos(progress * Math.PI) * verticalDist,
-                transform: 'rotate(' + (Math.random() * 40 - 10) + 'deg)'
+                transform: 'rotate(' + (Math.random() * 30 - 20 + 50 * (1 - progress)) + 'deg)'
             })
         }
         requestAnimationFrame(step)
