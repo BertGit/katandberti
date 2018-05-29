@@ -4,7 +4,9 @@ default-color = #3c3b3b
 
 body
 	min-height 10rem
-	padding-top 6rem
+	padding-top 4rem
+	@media(max-width: 768px)
+		padding-top 3rem
 	font-family 'Maven Pro', sans-serif
 	color default-color
 
@@ -22,32 +24,39 @@ p
 .navbar
 	background-color: #ffffff
 	padding 1rem 2rem
+	@media(max-width: 768px)
+		padding 0.5rem 1rem
 
-.rings
-	height 60px
+.logo
+	width 42px
+	@media(max-width: 768px)
+		width 30px
 
 #butterfly
 	position absolute
 	left -5rem
 	img
 		width 5rem
-	@media(max-width: 768px)
-		img
+		@media(max-width: 768px)
 			width 3rem!important
 
 #personalised
 	.container
 		height 100%
 		padding-top 5rem
+	#rings
+		width 80px
+		@media(max-width: 768px)
+			width 60px
+
 	#guest-name
 		font-family 'Cedarville Cursive', cursive
 		font-size 5rem
+		@media(max-width: 768px)
+			font-size 3rem
 	#guest-intro
 		font-size 1.5rem
-	@media(max-width: 768px)
-		#guest-name
-			font-size 3rem
-		#guest-intro
+		@media(max-width: 768px)
 			font-size 1.2rem
 	#angle-down
 		font-size 5rem
@@ -55,9 +64,10 @@ p
 		color #585858
 
 #marriage
-	background-image url('/img/shutters.jpg')
+	background-image url('/img/dordogne.jpg')
 	background-repeat no-repeat
 	background-size cover
+	background-position center center
 	min-height 600px
 	.white-on
 		color white
@@ -65,19 +75,21 @@ p
 	#getting-married
 		padding-top 13rem
 		font-size 3rem
+		@media(max-width: 768px)
+			font-size 2rem
 	#save-the-date
 		font-family 'Cedarville Cursive', cursive
 		font-size 8rem
-	@media(max-width: 768px)
-		#getting-married
-			font-size 2rem
-		#save-the-date
+		@media(max-width: 768px)
 			font-size 5rem
 
 #short-info
-	background-color #FDD782
+	background-color #FFC7AA
 	p
 		font-size 1.5rem
+		// color white
+	a
+		// color white
 	.date-large
 		p
 			font-size 3rem
@@ -105,16 +117,15 @@ p
 
 .btn-rsvp
 	padding 0.4rem 2rem
-@media(max-width: 768px)
-	.btn-rsvp
+	@media(max-width: 768px)
 		padding 0.2rem 1rem
 	
-@media(min-width 768px)
-	.btn-rsvp2
+.btn-rsvp2
+	@media(min-width 768px)
 		max-width 20rem
 
-@media(max-width: 768px)
-	#wedding-date
+#wedding-date
+	@media(max-width: 768px)
 		flex-direction column
 
 // @media(max-width: 768px)

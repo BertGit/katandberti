@@ -5,14 +5,14 @@
         console.log("window " + $(window).height())
         console.log("header " + $('#header').height())
         $('#personalised-content').css({
-            "padding-top": $(window).height() / 2 - $('#header').height() - ($('#angle-down').position().top + $('#angle-down').height() - $('#guest-name').position().top) / 2 + 'px'
+            "padding-top": $(window).height() / 2 - $('#header').height() - ($('#angle-down').position().top + $('#angle-down').height() - $('#rings').position().top) / 2 - 20 + 'px'
         })
         $('#personalised').height(Math.max($('#personalised').height(), $('#angle-down').position().top + $('#angle-down').height()))
 
-        $('#marriage').height($(window).height() - $('#header').height());
+        $('#marriage').height($(window).height());
         console.log("save-the-date " + $('#save-the-date').height())
         $('#getting-married').css({
-            "padding-top": $(window).height() / 2 - $('#header').height() - ($('#save-the-date').height() + $('#getting-married').height()) / 2 + 'px'
+            "padding-top": $(window).height() / 2 - ($('#save-the-date').height() + $('#getting-married').height()) / 2 + 'px'
         })
     });
 
@@ -32,13 +32,13 @@
     var prevProgress = 0.0
     var duration = 2000
     var waitTime = 1000
-    var verticalDist = $('#personalised').height() / 2 - $('#angle-down').height()
     var butterfly = $('#butterfly')
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame
     function step(timestamp) {
         // Refresh values every time in case user resizes browser window
         var xTarget = $('#angle-down').position().left - $('#angle-down').width() - butterfly.width() + 10
         var yTarget = $('#angle-down').position().top + $('#angle-down').height() / 2 - 10
+        var verticalDist = ($('#personalised').height() - yTarget - butterfly.height()) / 2
         var xStart = butterfly.position().left
         var yStart = yTarget - Math.cos(Math.PI) * verticalDist
         if (start === null) start = timestamp

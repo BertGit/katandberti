@@ -2,7 +2,7 @@ extends layout
 
 block content
 	nav#header.navbar.navbar-expand-md.fixed-top
-		img.navbar-brand.rings(src="/img/logoKB.png")
+		img.navbar-brand.logo(src="/img/logoKB.png")
 		ul.navbar-nav.mr-auto
 		a(href="#RSVP")
 			button.btn.btn-dark.btn-rsvp(type="button") r.s.v.p
@@ -11,6 +11,8 @@ block content
 			#butterfly
 				img(src="img/butterfly.gif")
 			#personalised-content.container.text-center
+				img(src="img/rings.png")#rings
+				.py-2
 				h1#guest-name Stephanie
 				h2#guest-intro We'd love for you to celebrate with us on our special day
 				a(href="#marriage")
@@ -23,7 +25,7 @@ block content
 			.container.text-center
 				.py-5
 				.p-2
-					p Kathryne and Berti's Wedding
+					p You're invited to Kathryne and Berti's wedding
 				.p-2
 					#wedding-date.d-flex.justify-content-center
 						.px-4.date-large
@@ -42,12 +44,12 @@ block content
 					a(href="https://goo.gl/maps/nBwZWof8cdn", target="blank")
 						img(src="img/bergerac-map.png")
 				#RSVP.p-3
-					p We know it's early days, but please give us an indication if possible
+					p We know it's early days, but by choosing one of the following options you can help us with our plans
 					.row
 						.col-md.py-2
 							button.btn.btn-dark.btn-block.btn-rsvp2.float-right(type="button") Great! Looking forward to it..
 						.col-md.py-2
-							button.btn.btn-dark.btn-block.btn-rsvp2.float-left(type="button") Sorry, I can't make it!
+							button.btn.btn-dark.btn-block.btn-rsvp2.float-left(type="button") Sorry, I can't make it :(
 				.p-4
 					p
 						a(href="mailto:kathryne.leigh@gmail.com,bertram.jeremy.mueller@gmail.com?Subject=Wedding Questions", target="_top")
