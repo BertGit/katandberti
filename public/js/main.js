@@ -2,13 +2,15 @@
     $("document").ready(function ($) {
         console.log("READY")
         $('#personalised').height($(window).height() - $('#header').height());
-        $('#center-block').css({
+        console.log("window " + $(window).height())
+        console.log("header " + $('#header').height())
+        $('#personalised-content').css({
             "padding-top": $(window).height() / 2 - $('#header').height() - ($('#angle-down').position().top + $('#angle-down').height() - $('#guest-name').position().top) / 2 + 'px'
         })
         $('#personalised').height(Math.max($('#personalised').height(), $('#angle-down').position().top + $('#angle-down').height()))
 
         $('#marriage').height($(window).height() - $('#header').height());
-        $('#center-block').css({
+        $('#marriage-content').css({
             "padding-top": $(window).height() / 2 - $('#header').height() - ($('#save-the-date').position().top + $('#save-the-date').height() - $('#getting-married').position().top) / 2 + 'px'
         })
     });
