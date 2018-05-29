@@ -10,8 +10,9 @@
         $('#personalised').height(Math.max($('#personalised').height(), $('#angle-down').position().top + $('#angle-down').height()))
 
         $('#marriage').height($(window).height() - $('#header').height());
-        $('#marriage-content').css({
-            "padding-top": $(window).height() / 2 - $('#header').height() - ($('#save-the-date').position().top + $('#save-the-date').height() - $('#getting-married').position().top) / 2 + 'px'
+        console.log("save-the-date " + $('#save-the-date').height())
+        $('#getting-married').css({
+            "padding-top": $(window).height() / 2 - $('#header').height() - ($('#save-the-date').height() + $('#getting-married').height()) / 2 + 'px'
         })
     });
 
