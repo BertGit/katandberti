@@ -2,7 +2,15 @@
     $("document").ready(function ($) {
         console.log("READY")
         $('#personalised').height($(window).height() - $('#header').height());
+        $('#center-block').css({
+            "padding-top": $(window).height() / 2 - $('#header').height() - ($('#angle-down').position().top + $('#angle-down').height() - $('#guest-name').position().top) / 2 + 'px'
+        })
+        $('#personalised').height(Math.max($('#personalised').height(), $('#angle-down').position().top + $('#angle-down').height()))
+
         $('#marriage').height($(window).height() - $('#header').height());
+        $('#center-block').css({
+            "padding-top": $(window).height() / 2 - $('#header').height() - ($('#save-the-date').position().top + $('#save-the-date').height() - $('#getting-married').position().top) / 2 + 'px'
+        })
     });
 
     $('a[href^="#"]').on('click', function (event) {
@@ -16,6 +24,7 @@
         }
     });
 
+    // Butterfly effect
     var start = null
     var prevProgress = 0.0
     var duration = 2000
