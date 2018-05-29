@@ -10,8 +10,7 @@
         $('#personalised').height(Math.max($('#personalised').height(), $('#angle-down').position().top + $('#angle-down').height()))
 
         $('#marriage').height($(window).height());
-        console.log("save-the-date " + $('#save-the-date').height())
-        $('#getting-married').css({
+        $('#save-the-date').css({
             "padding-top": $(window).height() / 2 - ($('#save-the-date').height() + $('#getting-married').height()) / 2 + 'px'
         })
     });
