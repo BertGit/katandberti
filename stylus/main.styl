@@ -68,9 +68,17 @@ p
 	.date-large
 		p
 			font-size 3rem
-	.date-center
-		border-left 1px solid #999
-		border-right 1px solid #999
+	#date-center
+		display inline-block
+		#date-center-v
+			padding 0 1rem
+			border-left 1px solid #999
+			border-right 1px solid #999
+		#date-center-h
+			display none
+			padding 1rem 1rem
+			border-top 1px solid #999
+			border-bottom 1px solid #999
 		p
 			font-size 2.5rem
 			line-height 1
@@ -78,8 +86,23 @@ p
 	#bergerac-map
 		img
 			width 20%
+			min-width 200px
 	#envelope
 		font-size 2rem
 
 .btn-rsvp
 	padding 0.4rem 2rem
+	
+@media(min-width 768px)
+	.btn-rsvp2
+		max-width 20rem
+
+@media(max-width: 768px)
+	#wedding-date
+		flex-direction column
+
+@media(max-width: 768px)
+	#date-center-v
+		display none
+	#date-center-h
+		display inline-block!important

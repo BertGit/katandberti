@@ -22,37 +22,39 @@ block content
 				h2#save-the-date.white-on Save the Date
 		#short-info
 			.container.text-center
-				.d-flex.flex-column
-					.my-5
-					.p-2
-						p Kathryne and Berti's Wedding
-					.p-2
-						.d-flex.flex-row.justify-content-center
-							.px-4.date-large
-								p JUNE
-							.px-4.date-center
-								p SAT<br>1
-							.px-4.date-large
-								p 2019
-					.p-2
-						p 
-							a(href="https://goo.gl/maps/nBwZWof8cdn", target="blank") Lalinde, Dordogne Region, France
-					#bergerac-map.p-2
-						a(href="https://goo.gl/maps/nBwZWof8cdn", target="blank")
-							img(src="img/bergerac-map.png")
-					#RSVP.p-5
-						p We know it's early days, but please give us an indication if possible
-						.d-flex.flex-row.justify-content-center
-							.px-4
-								button.btn.btn-dark.btn-rsvp(type="button") Great, I want more details
-							.px-4
-								button.btn.btn-dark.btn-rsvp(type="button") Sorry, I can't make it!
-					.p-4
-						p
-							a(href="mailto:kathryne.leigh@gmail.com?Subject=Wedding Questions", target="_top")
-								i#envelope.fa.fa-envelope
-								| <br>Get in touch with us if you have a question
-					.pb-5
+				.py-5
+				.p-2
+					p Kathryne and Berti's Wedding
+				.p-2
+					#wedding-date.d-flex.justify-content-center
+						.px-4.date-large
+							p JUNE
+						.px-4
+							#date-center
+								#date-center-v
+									p SAT<br>1
+								#date-center-h
+									p SAT 1
+						.px-4.date-large
+							p 2019
+				.p-2
+					p Lalinde, Dordogne Region, France
+				#bergerac-map.p-2
+					a(href="https://goo.gl/maps/nBwZWof8cdn", target="blank")
+						img(src="img/bergerac-map.png")
+				#RSVP.p-3
+					p We know it's early days, but please give us an indication if possible
+					.row
+						.col-md.py-2
+							button.btn.btn-dark.btn-block.btn-rsvp2.float-right(type="button") Great! Looking forward to it..
+						.col-md.py-2
+							button.btn.btn-dark.btn-block.btn-rsvp2.float-left(type="button") Sorry, I can't make it!
+				.p-4
+					p
+						a(href="mailto:kathryne.leigh@gmail.com?Subject=Wedding Questions", target="_top")
+							i#envelope.fa.fa-envelope
+							| <br>Get in touch with us if you have a question
+				.pb-5
 
 
 	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
