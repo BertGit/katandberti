@@ -1,17 +1,30 @@
 (function ($) { // encapsulate jQuery
     $("document").ready(function ($) {
         console.log("READY")
-        $('#personalised').height($(window).height() - $('#header').height());
+        $('#personalised').css({
+            "min-height": ($(window).height() - $('#header').height())
+        })
         console.log("window " + $(window).height())
         console.log("header " + $('#header').height())
         $('#personalised-content').css({
-            "padding-top": $(window).height() / 2 - $('#header').height() - ($('#angle-down').position().top + $('#angle-down').height() - $('#rings').position().top) / 2 - 20 + 'px'
+            "padding-top": Math.max($(window).height() / 2 - $('#header').height() - ($('#angle-down').position().top + $('#angle-down').height() - $('#rings').position().top) / 2 - 20, 50) + 'px'
         })
         $('#personalised').height(Math.max($('#personalised').height(), $('#angle-down').position().top + $('#angle-down').height()))
 
-        $('#marriage').height($(window).height());
+        $('#marriage').css({
+            "min-height": $(window).height()
+        })
         $('#save-the-date').css({
-            "padding-top": $(window).height() / 2 - ($('#save-the-date').height() + $('#getting-married').height()) / 2 + 'px'
+            "padding-top": Math.max($(window).height() / 2 - ($('#kb-circle').position().top + $('#kb-circle').height() - $('#save-the-date').position().top) / 2, 50) + 'px'
+        })
+        var waypoint = new Waypoint({
+            element: $('#kb-circle'),
+            handler: function () {
+                this.element.css({
+                    boxShadow: '0 0 0 15px rgba(239,192,80,0.5)'
+                })
+            },
+            offset: 'bottom-in-view'
         })
     });
 

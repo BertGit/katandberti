@@ -16,11 +16,18 @@ block content
 				h1#guest-name Stephanie
 				h2#guest-intro We'd love for you to celebrate with us on our special day
 				a(href="#marriage")
-					i#angle-down.fa.fa-angle-down
+					i#angle-down.fas.fa-chevron-down
 		#marriage
 			#marriage-content.container.text-center
 				h1#save-the-date.white-on Save the Date
 				h2#getting-married.white-on We're getting married!
+				.py-5
+				#kb-circle-row.d-flex.flex-column.align-items-center
+					#kb-circle.d-flex.flex-column.justify-content-center
+						span Kat<br>&<br>Berti
+						.py-2
+						span 1 June 2019
+				.py-5
 		#short-info
 			.container.text-center
 				.py-5
@@ -66,4 +73,5 @@ block content
 
 	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
 	script(src='bootstrap-4/js/bootstrap.min.js')
+	script(src="js/jquery.waypoints.min.js")
 	script(src="js/main.js")

@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/BertGit/katandberti#readme",
   "dependencies": {
+    "animate.css": "^3.6.1",
+    "animejs": "^2.2.0",
     "body-parser": "^1.18.3",
     "errorhandler": "^1.5.0",
     "express": "^4.16.3",
@@ -32,6 +34,7 @@
     "morgan": "^1.9.0",
     "pug": "^2.0.3",
     "serve-favicon": "^2.5.0",
-    "serve-static": "^1.13.2"
+    "serve-static": "^1.13.2",
+    "waypoints": "^4.0.1"
   }
 }
