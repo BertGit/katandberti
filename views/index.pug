@@ -4,8 +4,9 @@ block content
 	nav#header.navbar.navbar-expand-md.fixed-top
 		img.navbar-brand.logo(src="/img/logoKB.png")
 		ul.navbar-nav.mr-auto
-		a(href="#RSVP")
-			button.btn.btn-dark.btn-rsvp(type="button") r.s.v.p
+		if id
+			a(href="#RSVP")
+				button.btn.btn-dark.btn-rsvp(type="button") r.s.v.p
 	main
 		#personalised
 			#butterfly
@@ -13,7 +14,10 @@ block content
 			#personalised-content.container.text-center
 				img(src="img/rings.png")#rings
 				.py-2
-				h1#guest-name Stephanie
+				if id
+					h1#guest-name #{guestName}
+				else
+					h1#guest-name Dear Guest
 				h2#guest-intro We'd love for you to celebrate with us on our special day
 				a(href="#marriage")
 					i#angle-down.fas.fa-chevron-down
@@ -33,7 +37,7 @@ block content
 				.py-5
 				.p-2
 					p You're invited to Kathryne and Berti's wedding
-				#wedding-date.p-2
+				#wedding-date.p-2.hidden-load
 					#wedding-date-desktop.d-flex.justify-content-center
 						.px-4.date-large
 							p JUNE
@@ -56,13 +60,27 @@ block content
 				#bergerac-map.p-2
 					a(href="https://goo.gl/maps/nBwZWof8cdn", target="blank")
 						img(src="img/bergerac-map.png")
-				#RSVP.p-3
-					p We know it's early days, but by choosing one of the following options you can help us with our plans
-					.row
-						.col-md.py-2
-							button.btn.btn-dark.btn-block.btn-rsvp2.float-right(type="button") Great! Looking forward to it..
-						.col-md.py-2
-							button.btn.btn-dark.btn-block.btn-rsvp2.float-left(type="button") Sorry, I can't make it :(
+				if id
+					#RSVP.p-3
+						if rsvp == "UNKNOWN"
+							#incomplete
+								p#RSVP-text We know it's early days, but by choosing one of the following options you can help us with our plans
+								.row
+									.col-md.py-2
+										button.btn.btn-dark.btn-block.btn-rsvp2.float-right(status="accept") Great! Looking forward to it..
+									.col-md.py-2
+										button.btn.btn-dark.btn-block.btn-rsvp2.float-left(status="decline") Sorry, I can't make it :(
+							#complete
+								p Thanks for letting us know
+								p Feel free to leave us a comment:
+								#comment-box.d-flex.justify-content-center
+									.col-md-5
+										textarea 
+										button#btn-comment.btn.btn-dark.float-right Send Comment
+						else if rsvp == "ACCEPTED"
+							p Thanks for accepting our invite! We're looking forward to seeing you there!
+						else if rsvp == "DECLINED"
+							p Sorry you can't make it to the event. Thanks for letting us know.
 				.p-4
 					p
 						a(href="mailto:kathryne.leigh@gmail.com,bertram.jeremy.mueller@gmail.com?Subject=Wedding Questions", target="_top")
@@ -71,7 +89,7 @@ block content
 				.pb-5
 
 
-	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js")
-	script(src='bootstrap-4/js/bootstrap.min.js')
+block scripts
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js")
 	script(src="js/jquery.waypoints.min.js")
-	script(src="js/main.js")
+	script(src="js/index.js")

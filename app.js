@@ -4,7 +4,8 @@ var express = require('express'),
   favicon = require('serve-favicon'),
   morgan = require('morgan'),
   serveStatic = require('serve-static'),
-  router = require('./router')
+  router = require('./router'),
+  bodyParser = require('body-parser')
 
 var app = module.exports = express()
 
@@ -15,6 +16,8 @@ app.set('view engine', 'pug')
 app.use(morgan('tiny'))
 app.use(favicon(path.join(__dirname, 'public', 'img', 'favicon.ico')))
 app.use(serveStatic(path.join(__dirname, 'public')))
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // Routing
 app.use('/', router)

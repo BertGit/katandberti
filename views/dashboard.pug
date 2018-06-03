@@ -1,0 +1,35 @@
+extends layout
+
+block header
+	link(rel="stylesheet", type="text/css", href="https://cdn.datatables.net/v/dt/dt-1.10.16/b-1.5.1/datatables.min.css")
+
+block content
+	.container
+		.row
+			.col-lg-12
+				h1.page-header Dashboard
+				if loggedin
+					table#table_id.display
+						thead
+							tr
+								th ID
+								th Adults
+								th Children
+								th RSVP
+								th Comment
+								th Last Visited
+				else 
+					if wrongpwd
+						.alert.alert-danger
+							strong Incorrect Password
+					form.form-inline(action="/dashboard", method='post')
+						.form-group
+							label(for="pwd") Password:
+							input#pwd.form-control(type="password", name="pwd")
+						.p-2
+						button.btn.btn-secondary(type="submit") Submit
+
+block scripts
+	script(src="js/dashboard.js")
+	script(type="text/javascript", charset="utf8", src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js")
+	script(type="text/javascript", charset="utf8", src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js")

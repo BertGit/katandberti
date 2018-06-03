@@ -26,6 +26,13 @@
             },
             offset: 'bottom-in-view'
         })
+        var waypoint = new Waypoint({
+            element: $('#wedding-date'),
+            handler: function () {
+                this.element.addClass('animated flipInX')
+            },
+            offset: 'bottom-in-view'
+        })
     });
 
     $('a[href^="#"]').on('click', function (event) {
@@ -37,6 +44,73 @@
                 scrollTop: target.offset().top - $('#header').height()
             }, 1000);
         }
+    });
+
+    $("button.btn-rsvp2").click(function () {
+        console.log("button clicked")
+        const user = $.url().segment(1)
+        const status = $(this).attr('status')
+        console.log(user)
+        console.log(status)
+        $.ajax({
+            url: `/api/update/${user}/${status}`,
+            method: 'POST',
+            success: function (result) {
+                if (result.success) {
+                    console.log("success")
+                    console.log(result)
+                    const specificText = status === "accept"
+                        ? "We'll be in touch soon with more info."
+                        : "Sorry to hear you can't make it."
+                    $("#complete p:first").text("Thanks for letting us know! " + specificText)
+                    $("#incomplete").fadeOut(function () {
+                        $("#complete").fadeIn()
+                    })
+                } else {
+                    console.log("no success")
+                    console.log(result)
+                    alert("Error trying to update preferences. Try again later")
+                }
+            },
+            error: function (err) {
+                console.log("error")
+                console.log(err)
+                alert("Error trying to update preferences. Try again later")
+            }
+        });
+    });
+
+    $("#btn-comment").click(function () {
+        console.log("comment button clicked")
+        const user = $.url().segment(1)
+        const comment = $("#comment-box textarea").val()
+        console.log(user)
+        console.log(comment)
+        $.ajax({
+            url: `/api/comment/${user}`,
+            data: { comment: comment },
+            method: 'POST',
+            success: function (result) {
+                if (result.success) {
+                    console.log("success")
+                    console.log(result)
+                    $("#complete").fadeOut(function () {
+                        $("#comment-box").attr("style", "display: none !important;")
+                        $(this).find("p:first").hide()
+                        $(this).find("p:last").text("Sweet! We've received your comment")
+                    }).fadeIn()
+                } else {
+                    console.log("no success")
+                    console.log(result)
+                    alert("Error trying to update preferences. Try again later")
+                }
+            },
+            error: function (err) {
+                console.log("error")
+                console.log(err)
+                alert("Error trying to update preferences. Try again later")
+            }
+        });
     });
 
     // Butterfly effect

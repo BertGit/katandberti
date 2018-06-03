@@ -15,7 +15,8 @@ module.exports = function (grunt) {
 			compile: {
 				files: {
 					'public/css/app.css': [
-						'stylus/main.styl'
+						'stylus/main.styl',
+						'stylus/dashboard.styl'
 					]
 				}
 			}
