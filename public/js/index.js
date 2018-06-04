@@ -95,10 +95,11 @@
                     console.log("success")
                     console.log(result)
                     $("#complete").fadeOut(function () {
-                        $("#comment-box").attr("style", "display: none !important;")
-                        $(this).find("p:first").hide()
-                        $(this).find("p:last").text("Sweet! We've received your comment")
-                    }).fadeIn()
+                        // $("#comment-box").attr("style", "display: none !important;")
+                        // $(this).find("p:first").hide()
+                        // $(this).find("p:last").text("Sweet! We've received your comment")
+                        $('#comment-received').fadeIn()
+                    })
                 } else {
                     console.log("no success")
                     console.log(result)

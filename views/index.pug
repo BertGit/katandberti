@@ -77,6 +77,11 @@ block content
 									.col-md-5
 										textarea 
 										button#btn-comment.btn.btn-dark.float-right Send Comment
+							#comment-received
+								.d-flex.justify-content-center
+									.col-md-5.alert.alert-success
+										strong Sweet!
+										|  We've received your comment
 						else if rsvp == "ACCEPTED"
 							p Thanks for accepting our invite! We're looking forward to seeing you there!
 						else if rsvp == "DECLINED"

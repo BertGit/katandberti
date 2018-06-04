@@ -53,7 +53,7 @@ router.get('/api/guests', (req, res) => {
     let data = []
     db.each("SELECT id, adults, children, rsvp, comment, last_visited FROM guests", (err, row) => {
         data.push([
-            row.id, row.adults, row.children, row.rsvp, row.comment, row.last_visited ? new Date(row.last_visited * 1e3).toDateString() : 'Not visited yet'
+            row.id, row.adults, row.children, row.rsvp, row.comment, row.last_visited ? new Date(row.last_visited * 1e3).toISOString() : 'Not visited yet'
         ])
     }, (err) => {
         if (err) {
