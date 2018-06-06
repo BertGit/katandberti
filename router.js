@@ -8,12 +8,15 @@ let db = new sqlite3.Database('guestdb', (err) => {
         return console.error(err.message);
     }
     console.log('Connected to the SQlite database.');
-    console.log('Create table if not exists');
-    db.run("DROP TABLE guests")
-    db.run("CREATE TABLE IF NOT EXISTS guests (id TEXT PRIMARY KEY, adults TEXT, children TEXT, rsvp TEXT default 'UNKNOWN', comment TEXT, last_visited INTEGER)")
-    db.run("INSERT INTO guests (id,adults,children) VALUES ('aE9r','Berti,Kat','Jojo')")
-    db.run("INSERT INTO guests (id,adults,children,rsvp,comment,last_visited) VALUES ('bE9r','Stephanie',NULL,'ACCEPTED',NULL,1527967287)")
-    db.run("INSERT INTO guests (id,adults,children,rsvp,comment,last_visited) VALUES ('cE9r','Reinhard',NULL,'DECLINED',NULL,1527967287)")
+    db.serialize(() => {
+        db.run("DROP TABLE IF EXISTS guests")
+        console.log('Create table if not exists');
+        db.run("CREATE TABLE IF NOT EXISTS guests (id TEXT PRIMARY KEY, adults TEXT, children TEXT, rsvp TEXT default 'UNKNOWN', comment TEXT, last_visited INTEGER)")
+        console.log('Created Table');
+        db.run("INSERT INTO guests (id,adults,children) VALUES ('aE9r','Berti,Kat','Jojo')")
+        db.run("INSERT INTO guests (id,adults,children,rsvp,comment,last_visited) VALUES ('bE9r','Stephanie',NULL,'ACCEPTED',NULL,1527967287)")
+        db.run("INSERT INTO guests (id,adults,children,rsvp,comment,last_visited) VALUES ('cE9r','Reinhard',NULL,'DECLINED',NULL,1527967287)")
+    })
 });
 
 router.get('/', (req, res) => {
