@@ -70,7 +70,7 @@ block content
 								p#RSVP-text We know it's early days, but by choosing one of the following options you can help us with our plans
 								.row
 									.col-md.py-2
-										button.btn.btn-light.btn-block.btn-rsvp2.float-right(status="accept") Great! Looking forward to it..
+										button.btn.btn-light.btn-block.btn-rsvp2.float-right(status="accept") Great! Looking forward to it
 									.col-md.py-2
 										button.btn.btn-light.btn-block.btn-rsvp2.float-left(status="decline") Sorry, I can't make it
 							#complete
@@ -79,14 +79,14 @@ block content
 								#comment-box.d-flex.justify-content-center
 									.col-md-5
 										textarea 
-										button#btn-comment.btn.btn-dark.float-right Send Comment
+										button#btn-comment.btn.btn-light.float-right Send Comment
 							#comment-received
 								.d-flex.justify-content-center
 									.col-md-5.alert.alert-success
 										strong Sweet!
 										|  We've received your comment
 						else if rsvp == "ACCEPTED"
-							p Thanks for accepting our invite! We're looking forward to seeing you there!
+							p Great that you think you can make it. More details to come soon.
 						else if rsvp == "DECLINED"
 							p Sorry you can't make it to the event. Thanks for letting us know.
 				.p-4
