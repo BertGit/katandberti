@@ -32,11 +32,14 @@ block content
 						.py-2
 						span 1 June 2019
 				.py-5
-		#short-info
-			.container.text-center
+		#short-info.position-relative
+			#decoration
+				img.top-right(src="/img/decoration.png")
+				img.bottom-left(src="/img/decoration.png")
+			.container.position-relative.text-center
 				.py-5
 				.p-2
-					p You're invited to Kathryne and Berti's wedding
+					p You're invited to our wedding
 				#wedding-date.p-2.hidden-load
 					#wedding-date-desktop.d-flex.justify-content-center
 						.px-4.date-large
@@ -67,9 +70,9 @@ block content
 								p#RSVP-text We know it's early days, but by choosing one of the following options you can help us with our plans
 								.row
 									.col-md.py-2
-										button.btn.btn-dark.btn-block.btn-rsvp2.float-right(status="accept") Great! Looking forward to it..
+										button.btn.btn-light.btn-block.btn-rsvp2.float-right(status="accept") Great! Looking forward to it..
 									.col-md.py-2
-										button.btn.btn-dark.btn-block.btn-rsvp2.float-left(status="decline") Sorry, I can't make it :(
+										button.btn.btn-light.btn-block.btn-rsvp2.float-left(status="decline") Sorry, I can't make it
 							#complete
 								p Thanks for letting us know
 								p Feel free to leave us a comment:

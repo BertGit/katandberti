@@ -99,6 +99,24 @@ p
 
 #short-info
 	background-color #FFC849
+	#decoration
+		img
+			position absolute
+			opacity 0.5
+		.top-right
+			top 0
+			right 0
+			height 15rem
+			@media(max-width: 768px)
+				height 10rem
+		.bottom-left
+			bottom 0
+			left 0
+			height 20rem
+			transform rotate(180deg)
+			@media(max-width: 768px)
+				height 15rem
+			
 	p
 		font-size 1.5rem
 	#wedding-date
