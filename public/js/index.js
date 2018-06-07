@@ -21,7 +21,7 @@
             element: $('#kb-circle'),
             handler: function () {
                 this.element.css({
-                    boxShadow: '0 0 0 15px rgba(239,192,80,0.5)'
+                    boxShadow: '0 0 0 15px rgba(255,200,73,0.5)'
                 })
             },
             offset: 'bottom-in-view'
